@@ -34,8 +34,7 @@ public class SchoolClassesController {
     }
    
    @RequestMapping(value="/CreateSchoolClass", method=RequestMethod.POST)
-    public String createSchoolClass(@RequestParam(value="schoolClassId", required=false) int id,
-    		@RequestParam(value="schoolClassStartYear", required=false) int startYear,
+    public String createSchoolClass(@RequestParam(value="schoolClassStartYear", required=false) int startYear,
     		@RequestParam(value="schoolClassCurrentYear", required=false) int currentYear,
     		@RequestParam(value="schoolClassProfile", required=false) String profile,
     		Model model, HttpSession session) {    	
@@ -43,7 +42,6 @@ public class SchoolClassesController {
     		return "redirect:/Login";
     	
     	SchoolClass schoolClass = new SchoolClass();
-    	schoolClass.setId(id);
     	schoolClass.setStartYear(startYear);
     	schoolClass.setCurrentYear(currentYear);
     	schoolClass.setProfile(profile);
